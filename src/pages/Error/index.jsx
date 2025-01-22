@@ -1,11 +1,7 @@
-/**
- * This component displays an error message.
- * @file Error component.
- * @returns {import('react').JSX.Element} The error message component.
- * @example
- * <Error />
- */
-function Error() {
+// @flow
+import React from 'react';
+
+function Error(): React.Node {
   return <div>error</div>;
 }
 

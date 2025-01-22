@@ -1,8 +1,5 @@
-/**
- * Routes file.
- * @file This file is saved as `routes/routes.jsx`.
- */
-import { lazy } from 'react';
+// @flow
+import React, { lazy } from 'react';
 import {
   ComponentWithSuspense,
   HtmlContent,
@@ -16,7 +13,13 @@ const NotFound = lazy(
   () => import(/* webpackChunkName: 'NotFound' */ '../pages/NotFound'),
 );
 
-const routes = [
+type RouteData = {
+  index?: boolean,
+  path?: string,
+  element: React.Node,
+};
+
+const routes: RouteData[] = [
   {
     index: true,
     element: (

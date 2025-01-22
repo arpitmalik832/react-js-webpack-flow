@@ -1,14 +1,11 @@
-/**
- * Home Page.
- * @file This file is saved as `Home/index.jsx`.
- */
+// @flow
+import React, { useEffect } from 'react';
 import {
   useBackPress,
   Button,
   log,
 } from '@arpitmalik832/react-js-rollup-library';
 import { useSelector } from 'react-redux';
-import { useEffect } from 'react';
 
 import ButtonV2 from '../../components/atoms/Button';
 import { ReactComponent as ReactIcon } from '../../assets/icons/react.svg';
@@ -20,7 +17,7 @@ import { useFetchDataQuery } from '../../redux/queries/sampleQuery';
  * @example
  * <Home />
  */
-function Home() {
+function Home(): React.Node {
   const apis = useSelector(state => state.apis);
 
   useBackPress();

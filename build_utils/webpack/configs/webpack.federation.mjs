@@ -3,10 +3,18 @@
  * @file The file is saved as `build_utils/webpack/webpack.federation.js`.
  */
 import webpack from 'webpack';
+import { readFileSync } from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
 
-import pkg from '../../../package.json' with { type: 'json' };
 import { entryPath } from '../../config/commonPaths.mjs';
 import getEntries from '../../config/modulesEntry.mjs';
+
+const filename = fileURLToPath(import.meta.url);
+const dirName = dirname(filename);
+const pkg = JSON.parse(
+  readFileSync(resolve(dirName, '../../../package.json'), 'utf8'),
+);
 
 const deps = pkg.dependencies;
 const REMOTE_HOST = getEntries(process.env.APP_ENV);

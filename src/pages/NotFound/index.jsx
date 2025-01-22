@@ -1,15 +1,7 @@
-/**
- * NotFound Page.
- * @file This file is saved as `NotFound/index.jsx`.
- */
+// @flow
+import React from 'react';
 
-/**
- * NotFound Page component.
- * @returns {import('react').JSX.Element} The 404 Not Found page.
- * @example
- * <NotFound />
- */
-function NotFound() {
+function NotFound(): React.Node {
   return <div>404</div>;
 }
 

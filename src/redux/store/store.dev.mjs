@@ -1,7 +1,5 @@
-/**
- * This file is used to create the redux store for development environment.
- * @file This file is saved as `redux/store/store.dev.js`.
- */
+// @flow
+import { AxiosInstance } from 'axios';
 import { thunk } from 'redux-thunk';
 import { logger } from 'redux-logger';
 import { slices } from '@arpitmalik832/react-js-rollup-library';
@@ -9,7 +7,24 @@ import { configureStore } from '@reduxjs/toolkit';
 // eslint-disable-next-line import/extensions
 import { sampleQuery } from '../queries/sampleQuery.js';
 
-const store = configureStore({
+type APIData = {
+  host: string,
+  headers: Record<string, string | Record<string, string>>,
+  axiosInstance: AxiosInstance,
+};
+
+type ApisRedux = APIData[];
+
+type NavigationRedux = {
+  stack: VoidFunctionWithParams<mixed>[],
+};
+
+const store: {
+  app: AppRedux,
+  apis: ApisRedux,
+  navigation: NavigationRedux,
+  sampleQuery: typeof sampleQuery.reducer,
+} = configureStore({
   reducer: {
     app: slices.appSlice.reducer,
     apis: slices.apisSlice.reducer,

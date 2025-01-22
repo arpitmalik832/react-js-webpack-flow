@@ -1,7 +1,5 @@
-/**
- * This file is used to test the Button component.
- * @file This file is saved as 'src/components/atoms/Button/index.stories.jsx'.
- */
+// @flow
+import React from 'react';
 import { ReduxProvider } from '@arpitmalik832/react-js-rollup-library';
 
 import Button from './index';
@@ -9,7 +7,7 @@ import store from '../../../redux/store/store';
 
 export default {
   title: 'Atoms/Button',
-  component: () => (
+  component: (): React.Node => (
     <ReduxProvider store={store}>
       <Button />
     </ReduxProvider>

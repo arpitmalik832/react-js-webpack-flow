@@ -33,7 +33,7 @@ export default {
 
     // adding handling for js files
     config.module.rules.push({
-      test: /\.(js|jsx)$/,
+      test: /\.(m?jsx?)$/,
       exclude: /node_modules/,
       use: ['babel-loader'],
     });

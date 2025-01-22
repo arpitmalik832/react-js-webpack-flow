@@ -9,14 +9,19 @@ import TerserPlugin from 'terser-webpack-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
+import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
+import { dirname, resolve } from 'path';
 
-import pkg from '../../../package.json' with { type: 'json' };
 import { entryPath, outputPath } from '../../config/commonPaths.mjs';
 import svgrConfig from '../../../svgr.config.mjs';
 import { ENVS } from '../../config/index.mjs';
 
 const filename = fileURLToPath(import.meta.url);
+const dirName = dirname(filename);
+const pkg = JSON.parse(
+  readFileSync(resolve(dirName, '../../../package.json'), 'utf8'),
+);
 
 const isBeta = process.env.APP_ENV === ENVS.BETA;
 const isRelease = process.env.APP_ENV === ENVS.PROD;
@@ -47,7 +52,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.m?jsx?$/,
         exclude: /node_modules/,
         use: [
           {

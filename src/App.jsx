@@ -1,19 +1,11 @@
-/**
- * The main application component.
- * @file The file is saved as `App.jsx`.
- */
+// @flow
+import React from 'react';
 import { RouterProvider } from 'react-router';
 
 import router from './routes';
 import useAppMount from './hooks/useAppMount';
 
-/**
- * Main application component.
- * @returns {import('react').JSX.Element} The rendered application.
- * @example
- * <App />
- */
-function App() {
+function App(): React.Node {
   useAppMount();
 
   return <RouterProvider router={router} />;

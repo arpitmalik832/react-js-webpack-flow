@@ -1,7 +1,4 @@
-/**
- * This is the entry point of the application.
- * @file This file is saved as `index.js`.
- */
+// @flow
 import {
   errorLog,
   SWRegistration,

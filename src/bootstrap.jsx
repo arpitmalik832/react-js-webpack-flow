@@ -1,8 +1,5 @@
-/**
- * This file contains the bootstrap logic for mounting the React application.
- * @file This file is saved as `src/bootstrap.jsx`.
- */
-import { StrictMode } from 'react';
+// @flow
+import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 
 import AppProvider from './providers/AppProvider';
@@ -20,7 +17,7 @@ import { MOUNT_ERRORS } from './enums/app';
  * unmount();
  * ```
  */
-function mount(ele) {
+function mount(ele: HTMLElement): () => void {
   // Validating the element
   if (!ele) {
     throw new Error(MOUNT_ERRORS.ELEMENT_REQUIRED);

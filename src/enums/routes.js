@@ -1,7 +1,4 @@
-/**
- * Enums for routes.
- * @file The file is saved as `enums/routes.js`.
- */
+// @flow
 const SEO = {
   HOME: {
     TITLE: 'Home',

@@ -1,18 +1,9 @@
-/**
- * PageWrapper component that logs route changes and renders child components.
- * @file The file is saved as `PageWrapper/index.jsx`.
- */
-import { useEffect } from 'react';
+// @flow
+import React, { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router';
 import { log } from '@arpitmalik832/react-js-rollup-library';
 
-/**
- * PageWrapper component that logs route changes and renders child components.
- * @returns {import('react').JSX.Element} The rendered component.
- * @example
- * <PageWrapper />
- */
-function PageWrapper() {
+function PageWrapper(): React.Node {
   const location = useLocation();
 
   useEffect(() => {

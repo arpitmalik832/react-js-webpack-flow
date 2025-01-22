@@ -1,21 +1,11 @@
-/**
- * This provider is used to wrap the application with all the necessary Providers.
- * @file This file is saved as `providers/AppProvider.jsx`.
- */
+// @flow
+import React from 'react';
 import { ReduxProvider } from '@arpitmalik832/react-js-rollup-library';
 
 import App from '../App';
 import store from '../redux/store/store';
 
-/**
- * AppWrapper component that wraps the application with ReduxProvider.
- * @returns {import('react').JSX.Element} The wrapped application component.
- * @example
- * return (
- *   <AppWrapper />
- * );
- */
-function AppProvider() {
+function AppProvider(): React.Node {
   return (
     <ReduxProvider store={store}>
       <App />

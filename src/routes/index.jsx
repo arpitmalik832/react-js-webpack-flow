@@ -1,9 +1,6 @@
-/**
- * This file is used to create the router for the application.
- * @file This file is saved as `routes/index.jsx`.
- */
-import { lazy } from 'react';
-import { createBrowserRouter } from 'react-router';
+// @flow
+import React, { lazy } from 'react';
+import { createBrowserRouter, Router } from 'react-router';
 import { ComponentWithSuspense } from '@arpitmalik832/react-js-rollup-library';
 
 import PageWrapper from '../components/organisms/PageWrapper';
@@ -13,7 +10,7 @@ const Error = lazy(
   () => import(/* webpackChunkName: 'Error' */ '../pages/Error'),
 );
 
-const router = createBrowserRouter([
+const router: Router = createBrowserRouter([
   {
     path: '/',
     element: <PageWrapper />,

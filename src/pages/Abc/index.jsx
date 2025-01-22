@@ -1,11 +1,7 @@
-/**
- * This is the Abc component.
- * @file Abc component file.
- * @returns {import('react').JSX.Element} The rendered component.
- * @example
- * <Abc />
- */
-function Abc() {
+// @flow
+import React from 'react';
+
+function Abc(): React.Node {
   return <div>Abc</div>;
 }
 

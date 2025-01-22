@@ -1,12 +1,28 @@
-/**
- * This file is used to create a sample query.
- * @file This file is saved as 'src/redux/queries/sampleQuery.js'.
- */
+// @flow
+import { AxiosInstance } from 'axios';
 import { createApi } from '@reduxjs/toolkit/query/react';
-
+import {
+  QueryDefinition,
+  MutationDefinition,
+  BaseQueryFn,
+  Api,
+} from '@reduxjs/toolkit/query';
 import { queries } from '@arpitmalik832/react-js-rollup-library';
 
-const sampleQuery = createApi({
+type BaseQueryParams = {
+  axiosInstance: AxiosInstance,
+  url: string,
+};
+
+const sampleQuery: Api<
+  BaseQueryFn<BaseQueryParams>,
+  {
+    fetchData: QueryDefinition,
+    updateData: MutationDefinition,
+  },
+  'sampleQuery',
+  'Jokes',
+> = createApi({
   reducerPath: 'sampleQuery',
   baseQuery: queries.baseQueryFn(),
   tagTypes: ['Jokes'],

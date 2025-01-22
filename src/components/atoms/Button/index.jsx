@@ -1,26 +1,13 @@
-/**
- * A button component that dispatches an action when clicked.
- * @file This file is saved as `src/components/atoms/Button/index.jsx`.
- */
+// @flow
+import React from 'react';
 import { slices } from '@arpitmalik832/react-js-rollup-library';
 import { useDispatch } from 'react-redux';
 
 import s from './index.module.scss';
 
-/**
- * A button component that dispatches an action when clicked.
- * @returns {import('react').JSX.Element} The rendered button component.
- * @example
- * <Button />
- */
-function Button() {
+function Button(): React.Node {
   const dispatch = useDispatch();
 
-  /**
-   * Handles the button click event by dispatching an action to update the store.
-   * @example
-   * onButtonClick();
-   */
   function onButtonClick() {
     dispatch(slices.updateStore({ key: 'x', value: 'a' }));
   }
